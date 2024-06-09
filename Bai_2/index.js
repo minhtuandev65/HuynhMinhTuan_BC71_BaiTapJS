@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function(){
     var arr = [];
 
     function nhapSo() {
-        var soLuong = parseInt(document.getElementById("soLuong").value);
+        var quantity = parseFloat(document.getElementById("quantity").value);
         var tong = 0;
 
-        if (!isNaN(soLuong) && soLuong > 0) {
+        if (!isNaN(quantity) && quantity > 0) {
             nhapCacSoDiv.innerHTML = "";
             tongDiv.innerHTML = "";
-            for(var i = 0; i < soLuong; i++){
+            for(var i = 0; i < quantity; i++){
                 var so = parseFloat(prompt("Nhập số thứ " + (i+1) + ": "));
                 if(!isNaN(so)){
                     arr.push(so);
