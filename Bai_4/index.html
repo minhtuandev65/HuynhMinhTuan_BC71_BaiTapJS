@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hình Chữ Nhật</title>
+</head>
+<body>
+    <h1>Tính diện tích, chu vi hình chữ nhật</h1>
+    <label for="">Nhập chiều dài</label>
+    <input type="text" id="inputLength">
+    <span id="notiLength">*</span>
+    <br><br>
+    <label for="">Nhập chiều rộng</label>
+    <input type="text" id="inputWidth">
+    <span id="notiWidth">*</span>
+    <br><br>
+    <form action="">
+        <select name="" id="chose">
+            <option value="none">None</option>
+            <option value="area" id="area">Tính diện tích</option>
+            <option value="perimeter" id="perimeter">Tính chu vi</option>
+        </select>
+    </form><br>
+    <button id="count">Tính</button>
+    <p id="result"></p>
+    <script src="./index.js"></script>
+</body>
+</html>
