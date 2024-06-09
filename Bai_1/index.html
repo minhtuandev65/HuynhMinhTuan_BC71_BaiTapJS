@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Tiền Lương Nhân Viên</title>
+</head>
+<body>
+    <h1>Tính Tiền Lương Nhân Viên Công Ty TNHH MTV</h1>
+    <p><b>Lưu ý:</b> Số tiền lương của nhân viên là 100000/1 ngày, mọi thắc mắc xin liên hệ phòng tài chính của công ty, Tổng lương nhân viên sẽ bằng số ngày làm nhân với lương 1 ngày.</p>
+    <ul>
+        <b>Lưu Ý:</b> Bảng tiền sẽ bị trừ nếu như đi trễ
+        <li>1 lần đi trễ sẽ bị trừ 20000</li>
+        <li>2 lần đi trễ sẽ bị trừ 40000</li>
+        <li>3 lần đi trễ sẽ bị trừ 60000</li>
+        <li>4 lần đi trễ sẽ bị trừ 80000</li>
+        <li>5 lần đi trễ sẽ bị trừ 1 ngày lương</li>
+        <li>Từ 5 lần trở đi mỗi lần đi trễ sẽ bị trừ 100000/1 lần</li>
+    </ul>
+    <labbel >Nhập số ngày làm</labbel>
+    <input type="text" id="nhapN"><br><br>
+    <label for="">Nhập số lần đi trễ</label>
+    <input type="text" id="nhapA"><br><br>
+    <button id="tinhLuong">Tính Lương</button>
+    <p id="total"></p>
+
+    <script src="./index.js"></script>
+</body>
+</html>
