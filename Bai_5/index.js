@@ -2,9 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var countSum = document.getElementById("count");
     var resultDigits = document.getElementById("result");
 
+    // Tính tổng ký số
+    // Input: valNumber
+    // Process: unit = valNumber % 10, dozens = Math.floor((valNumber % 100) / 10), hundreds = Math.floor((valNumber % 1000) / 100), thousands = Math.floor((valNumber % 10000) / 1000), tensOfThousands = Math.floor((valNumber % 100000) / 10000), hundredsOfThousands = Math.floor(valNumber / 100000), sum = unit + dozens, sum = unit + dozens + hundreds, sum = unit + dozens + hundreds + thousands, sum = unit + dozens + hundreds + thousands + tensOfThousands, sum = unit + dozens + hundreds + thousands + tensOfThousands + hundredsOfThousands
+    // Output: Sum
     function calculateDigits() {
-        const valNumber = parseInt(document.getElementById("number").value);
-        const numberInput = document.getElementById("number").value.trim();
+        var valNumber = parseInt(document.getElementById("number").value);
+        var numberInput = document.getElementById("number").value.trim();
         var notiNumber = document.getElementById("notiNumber");
         let unit = valNumber % 10;
         let dozens = Math.floor((valNumber % 100) / 10);
@@ -12,12 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
         let thousands = Math.floor((valNumber % 10000) / 1000);
         let tensOfThousands = Math.floor((valNumber % 100000) / 10000);
         let hundredsOfThousands = Math.floor(valNumber / 100000);
-        let sum = 0;
+        let sum = null;
 
         resultDigits.innerText = "";
         notiNumber.innerText = "*";
         notiNumber.style.color = "black";
-
 
         if (numberInput === "" || isNaN(valNumber)) {
             notiNumber.innerText = "Mời nhập ký số.";

@@ -2,9 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var sum = document.getElementById("sum");
     var payroll = document.getElementById("payroll");
 
+    // Input: inputDay, inputLate
+    // Process: a = 100000, diTreDuoi4Lan = inputLate * 20000, diTre5Lan = a + 80000, diTreTren5Lan = (diTre5Lan + ((inputLate - 5) * a)), tongLuong = inputDay * a, tongLuongDiTre = tongLuong - diTre5Lan, tongLuongDiTre = tongLuong - diTreTren5Lan, tongLuongDiTre = tongLuong - diTreDuoi4Lan
+    // Output: total
     function cal() {
-        const inputDay = parseInt(document.getElementById("inputDay").value.trim());
-        const inputLate = parseInt(document.getElementById("inputLate").value.trim());
+        var inputDay = parseInt(document.getElementById("inputDay").value.trim());
+        var inputLate = parseInt(document.getElementById("inputLate").value.trim());
         let notiDay = document.getElementById("notiDay");
         let notiLate = document.getElementById("notiLate");
         const a = 100000;
@@ -12,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const diTre5Lan = a + 80000;
         const diTreTren5Lan = (diTre5Lan + ((inputLate - 5) * a));
         const tongLuong = inputDay * a;
-        let tongLuongDiTre = 0;
+        let total = null;
 
         sum.innerText = "";
         sum.style.color = "black";
@@ -42,13 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
             sum.style.color = "red";
         }else{
             if (inputLate === 5)
-                tongLuongDiTre = tongLuong - diTre5Lan;
+                total = tongLuong - diTre5Lan;
             else if (inputLate > 5)
-                tongLuongDiTre = tongLuong - diTreTren5Lan;
+                total = tongLuong - diTreTren5Lan;
             else
-                tongLuongDiTre = tongLuong - diTreDuoi4Lan;
+                total = tongLuong - diTreDuoi4Lan;
     
-            sum.innerText = "Tổng Lương = " + tongLuongDiTre;
+            sum.innerText = `Tổng Lương = ${total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")} VND` ;
         }
     }
     payroll.addEventListener("click", cal);
